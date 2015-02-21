@@ -1,0 +1,1 @@
+alias yaourt="yaourt --nocolor"
