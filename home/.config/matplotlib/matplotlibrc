@@ -1,0 +1,3 @@
+backend : qt4agg
+image.interpolation : nearest
+image.cmap : YlGnBu_r
