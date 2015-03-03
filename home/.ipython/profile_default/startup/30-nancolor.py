@@ -10,6 +10,10 @@ from matplotlib import cm
 for name in cm.datad:
     cm.get_cmap(name).set_bad('gray')
 
+# These uses dark gray.
+cm.Accent.set_bad('white')
+cm.Accent_r.set_bad('white')
+
 # These uses all shades of gray.
 cm.gray.set_bad('brown')
 cm.gray_r.set_bad('brown')
