@@ -12,7 +12,7 @@ if [ -n "$PLAN9" -a -d "$PLAN9" ]; then
 		mkdir $NAMESPACE
 	fi
 	
-	if [ "$TERM" = "dumb" ]; then	# acme or 9term
+	if [ "$TERM" = "dumb" -a -n "$termprog" ]; then	# acme or 9term
 		set +o emacs
 		export PAGER=nobs
 		export EDITOR=E
@@ -24,6 +24,11 @@ if [ -n "$PLAN9" -a -d "$PLAN9" ]; then
 			\cd "$@" && awd
 		}
 		awd
+	fi
+	
+	if ! 9p ls plumb &>/dev/null; then
+		export EDITOR=ed
+		export VISUAL=$EDITOR
 	fi
 
 	# postscript fonts from Plan 9
